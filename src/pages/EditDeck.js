@@ -24,7 +24,7 @@ function EditDeck() {
       setDeck(pendingDeck);
     }
     getDeck();
-  }, []);
+  }, [deckId]);
 
   //console.log(deck);
 

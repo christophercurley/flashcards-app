@@ -24,7 +24,7 @@ function Decks() {
       setDeck(currentDeck);
     }
     getDeck();
-  }, []);
+  }, [deckId]);
 
   return (
     <React.Fragment>

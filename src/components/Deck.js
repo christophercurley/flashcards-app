@@ -23,7 +23,7 @@ function Deck(props) {
                 Study
               </button>
             </Link>
-            <Link to="/">
+            <Link to={`/decks/${deck.id}/cards/new`}>
               <button id="add-cards" type="button" className="btn btn-primary">
                 + Add Cards
               </button>

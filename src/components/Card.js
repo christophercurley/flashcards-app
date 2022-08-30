@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import "./Card.css";
 
 function Card(props) {
-  // const { cards } = props;
   const { deck } = props;
   let cards = deck ? deck.cards : null;
   const [cardSide, setCardSide] = useState("front");

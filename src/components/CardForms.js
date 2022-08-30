@@ -1,45 +1,41 @@
 import React from "react";
-import "./DeckForms.css";
 
-function DeckForms(props) {
-  const { deck, setNewDeck, handleSubmit, handleCancel } = props;
-  const deckChange = (e) => {
-    setNewDeck({
-      ...deck,
+function CardForms(props) {
+  const { card, setCard, handleSubmit, handleCancel } = props;
+  const cardChange = (e) => {
+    setCard({
+      ...card,
       [e.target.name]: e.target.value,
     });
   };
+  //console.log(card);
 
   return (
     <React.Fragment>
       <div className="mb-3">
-        <label htmlFor="name" className="form-label">
-          Name
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="name"
-          name="name"
-          value={deck.name}
-          onChange={(e) => {
-            deckChange(e);
-          }}
-        />
-      </div>
-      <div className="mb-3">
         <label htmlFor="description" className="form-label">
-          Description
+          Front
         </label>
         <textarea
           className="form-control"
-          id="description"
+          id="front"
           rows="3"
-          name="description"
-          value={deck.description}
-          onChange={(e) => {
-            deckChange(e);
-          }}
+          name="front"
+          value={card.front}
+          onChange={cardChange}
+        ></textarea>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="description" className="form-label">
+          Back
+        </label>
+        <textarea
+          className="form-control"
+          id="back"
+          rows="3"
+          name="back"
+          value={card.back}
+          onChange={cardChange}
         ></textarea>
         <div>
           <button
@@ -62,4 +58,4 @@ function DeckForms(props) {
   );
 }
 
-export default DeckForms;
+export default CardForms;

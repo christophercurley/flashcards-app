@@ -1,7 +1,10 @@
 import React from "react";
+import { Link, useRouteMatch } from "react-router-dom";
 
 function ListCards(props) {
+  const { url } = useRouteMatch();
   const { cards, handleCardDelete } = props;
+
   const renderCardList = cards.map((card) => (
     <div className="card" key={card.id}>
       <div className="card-body flashcard">
@@ -9,9 +12,11 @@ function ListCards(props) {
         <div className="card-back">
           <div className="answer">{card.back}</div>
           <div className="card-buttons">
-            <button type="button" id={card.id} className="btn btn-secondary">
-              Edit
-            </button>
+            <Link to={`${url}/cards/${card.id}/edit`}>
+              <button type="button" id={card.id} className="btn btn-secondary">
+                Edit
+              </button>
+            </Link>
             <button
               type="button"
               id={card.id}

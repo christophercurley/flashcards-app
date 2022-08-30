@@ -7,7 +7,6 @@ import "./Study.css";
 function Study() {
   const { deckId } = useParams();
   const [deck, setDeck] = useState(null);
-  // const cards = deck.cards;
 
   useEffect(() => {
     async function loadDeck() {
@@ -25,7 +24,7 @@ function Study() {
             <li className="breadcrumb-item">
               <Link to="/">Home</Link>
             </li>
-            <li className="breadcrumb-item">Deck</li>
+            <li className="breadcrumb-item">{deck && deck.name}</li>
             <li className="breadcrumb-item active" aria-current="page">
               Study
             </li>
@@ -42,15 +41,15 @@ function Study() {
               You need at least 3 cards to study. There are {deck.cards.length}{" "}
               in this deck.
             </p>
-
-            <button type="button" className="btn btn-success create">
-              Add Cards +
-            </button>
+            <Link to={`/decks/${deck.id}/cards/new`}>
+              <button type="button" className="btn btn-success create">
+                Add Cards +
+              </button>
+            </Link>
           </div>
         ) : (
           <Card deck={deck} />
         )}
-        {/* <Card cards={cards} /> */}
       </div>
     </React.Fragment>
   );
