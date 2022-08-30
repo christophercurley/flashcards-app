@@ -1,0 +1,46 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.no-border {
+  border: 0;
+}
+
+.deck-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.l-buttons {
+  margin-left: 20px;
+}
+
+.flashcard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flashcard > div {
+  flex: 1;
+}
+
+.flashcard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flashcard-container h2 {
+  margin-right: 57.5%;
+}
+
+.card-back {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,12 @@
+li {
+  color: #2a7fff;
+}
+
+.studyCard {
+  display: flex;
+  justify-content: center;
+}
+
+.cardError {
+  display: block;
+}

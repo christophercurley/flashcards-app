@@ -1,10 +1,9 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./ListDecks.css";
 
 function ListDecks(props) {
   const { decks, handleDelete } = props;
-  const { url, path } = useRouteMatch();
-  console.log("url", url, "path", path);
 
   const constructList = () => {
     return decks.map((deck) => (
@@ -16,9 +15,11 @@ function ListDecks(props) {
         <p>{deck.description}</p>
         <div className="card-body action-buttons">
           <div>
-            <button type="button" className="btn btn-secondary">
-              View
-            </button>
+            <Link to={`/decks/${deck.id}`}>
+              <button type="button" className="btn btn-secondary">
+                View
+              </button>
+            </Link>
             <Link to={`/decks/${deck.id}/study`}>
               <button id="study" type="button" className="btn btn-primary">
                 Study
@@ -40,7 +41,6 @@ function ListDecks(props) {
     ));
   };
 
-  console.log(constructList());
   return <React.Fragment>{constructList()}</React.Fragment>;
 }
 
